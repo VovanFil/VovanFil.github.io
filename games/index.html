@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Forge Games</title>
+  <meta name="description" content="Free Android games by Pixel Forge Games. Безкоштовні ігри для Android.">
+  <link rel="icon" href="img/studio.png">
+  <meta property="og:title" content="Pixel Forge Games">
+  <meta property="og:description" content="Free Android games. Безкоштовні ігри для Android.">
+  <meta property="og:image" content="img/studio.png">
+  <style>
+    :root { --bg:#12121c; --card:#1d1d2c; --line:#2d2d44; --text:#f2f2f7; --muted:#a6a6bd; --gold:#ffd84d; --violet:#6a2cff; --orange:#ff7a18; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; background:var(--bg); color:var(--text);
+      font-family:"Segoe UI",Roboto,Arial,sans-serif; }
+    main { max-width:520px; margin:0 auto; padding:32px 16px 48px; }
+    header { text-align:center; margin-bottom:28px; }
+    header img { width:96px; height:96px; border-radius:22px; }
+    h1 { margin:14px 0 4px; font-size:1.7rem; }
+    header p { margin:0; color:var(--muted); }
+    .game { display:flex; align-items:center; gap:14px; padding:14px; margin-bottom:12px;
+      background:var(--card); border:1px solid var(--line); border-radius:18px;
+      color:inherit; text-decoration:none; transition:transform .15s, border-color .15s; }
+    .game:hover, .game:focus-visible { transform:translateY(-2px); border-color:var(--violet); outline:none; }
+    .game img { width:72px; height:72px; border-radius:16px; flex:none; }
+    .info { flex:1; min-width:0; }
+    .info h2 { margin:0 0 3px; font-size:1.05rem; color:var(--gold); }
+    .info p { margin:0; font-size:.88rem; color:var(--muted); line-height:1.35; }
+    .btn { flex:none; padding:9px 14px; border-radius:999px; font-weight:700; font-size:.85rem; color:#fff;
+      background:linear-gradient(135deg,var(--violet),var(--orange)); white-space:nowrap; }
+    footer { text-align:center; margin-top:28px; color:var(--muted); font-size:.8rem; }
+    @media (max-width:380px) { .btn { padding:8px 10px; } .game img { width:60px; height:60px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="img/studio.png" alt="Pixel Forge Games">
+      <h1>Pixel Forge Games</h1>
+      <p data-i18n="tagline">Ігри з України для Android. Безкоштовно.</p>
+    </header>
+
+    <a class="game" href="https://play.google.com/store/apps/details?id=com.corgibanan">
+      <img src="img/corgi-blaster.png" alt="" width="72" height="72">
+      <div class="info"><h2>Corgi Blaster</h2><p data-i18n="blaster">Раннер-шутер: корги проти собак і котів. Стріляй, стрибай, прокачуйся.</p></div>
+      <span class="btn" data-i18n="play">Google Play</span>
+    </a>
+
+    <a class="game" href="https://play.google.com/store/apps/details?id=com.corgitor">
+      <img src="img/corgitor.png" alt="" width="72" height="72">
+      <div class="info"><h2>Corgitor</h2><p data-i18n="corgitor">Виховуй корги, лови банани, грай офлайн.</p></div>
+      <span class="btn" data-i18n="play">Google Play</span>
+    </a>
+
+    <a class="game" href="https://play.google.com/store/apps/details?id=com.mastergaming.onetapguardian">
+      <img src="img/guardian.png" alt="" width="72" height="72">
+      <div class="info"><h2>One Tap Guardian</h2><p data-i18n="guardian">Блокуй атаки точним тапом. Лови ритм, збирай комбо.</p></div>
+      <span class="btn" data-i18n="play">Google Play</span>
+    </a>
+
+    <a class="game" href="https://play.google.com/store/apps/details?id=com.devlabvf.sushicollector">
+      <img src="img/sushi.png" alt="" width="72" height="72">
+      <div class="info"><h2>Sushi Merge: Idle Collector</h2><p data-i18n="sushi">Збирай рідкісні суші, поєднуй рецепти, будуй колекцію.</p></div>
+      <span class="btn" data-i18n="play">Google Play</span>
+    </a>
+
+    <footer>
+      <a href="../corgi-blaster/privacy-policy.html" style="color:inherit">Privacy Policy</a>
+    </footer>
+  </main>
+  <script>
+    var en = {
+      tagline: "Free Android games from Ukraine.",
+      blaster: "Run-and-gun roguelite: corgi vs dogs and cats. Shoot, jump, upgrade.",
+      corgitor: "Raise a corgi, catch bananas, play offline.",
+      guardian: "Block attacks with perfectly timed taps. Build combos.",
+      sushi: "Collect rare sushi, fuse recipes, build your collection.",
+      play: "Google Play"
+    };
+    var lang = (navigator.language || "uk").toLowerCase();
+    if (lang.indexOf("uk") !== 0 && lang.indexOf("ru") !== 0) {
+      document.documentElement.lang = "en";
+      document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        var t = en[el.getAttribute("data-i18n")];
+        if (t) el.textContent = t;
+      });
+    }
+  </script>
+</body>
+</html>
